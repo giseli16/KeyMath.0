@@ -225,5 +225,9 @@ public class OperacionesBasicas implements Operaciones
         return new Real(real);
     }
     
-    
+    public Real raiz(Real a, int b)
+    {
+        double real = Math.pow(a.getReal(), 1 / b);
+        return new Real(real);
+    }
 }
