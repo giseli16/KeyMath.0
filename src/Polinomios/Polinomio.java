@@ -82,7 +82,7 @@ public class Polinomio extends ListaD{
     }
 //    public void elevaBinomio(Termino termino1, Termino termino2){
 //        int a,b,c,d,e,f,g;
-//        ListaDoble listaAux = new ListaDoble();
+//        Polinomio listaAux = new Polinomio();
 //        if(vacio()){
 //            System.out.println("No Hay Elemento En la lista");
 //        }else{
@@ -126,12 +126,42 @@ public class Polinomio extends ListaD{
             listaAux.imprimir();
         }
     }
-    public void elevaPolinomio(){
+    public void multiplicaPolinomio(Polinomio polinomio1,Polinomio polinomio2 ){
+       Polinomio listaAux = new Polinomio();
+       TerminoP T1,T2,Taux = new TerminoP();
+       double a=0,b=0,d,e=0;
+       String c = null,f,varaux;
+       while(!polinomio1.vacio()){
+           T1 = (TerminoP)polinomio1.eliminaFinal();
+        a= T1.getCoeficiente();
+        b=T1.getExponente();
+        c = T1.getVariable();
+        while(!polinomio2.vacio()){
+            T2 = (TerminoP)polinomio2.eliminaInicio();
+            d=T2.getCoeficiente();
+            e=T2.getExponente();
+            f=T2.getVariable();
+            if(c.compareTo(f)==0){
+               a=a*d;
+               b=b+e;
+                 Taux.setCoeficiente(a);Taux.setExponente(b);Taux.setVariable(c);
+               listaAux.insertaFinal(Taux);
+       listaAux.imprimir();       
+            }
+        }
+          
+       }
+     
+//        System.out.println("Coeficiente: "+c+"Exponente: "+e+"Variable: "+x);
+       
+
+    }
+    public void SumaPolinomio(Polinomio polinomio1, Polinomio polinomio2){
         
     }
 //    public void multiplicaBinomio(Termino termino1, Termino termino2, Termino termino3, Termino termino4){
 //        int a,b,c,d,e,f,g,h;
-//        ListaDoble listaAux = new ListaDoble();
+//        Polinomio listaAux = new Polinomio();
 //        if(vacio()){
 //            System.out.println("No Hay Elementos En la Lista");
 //        }else{
@@ -169,6 +199,8 @@ public class Polinomio extends ListaD{
 //        listaD.insertaInicio(termino2);
 //        listaD.imprimir();
 //        listaD.elevaBinomio(termino2, termino);
+
+            System.out.println("Primer Polinomio: ");
            while(op!=1){
                System.out.println("Inserte el Coeficiente");
                C = entrada.nextInt();
@@ -182,7 +214,24 @@ public class Polinomio extends ListaD{
                System.out.println("Op =1");
                op = entrada.nextInt();
           }
+           op=0;
+           System.out.println("Segundo Polinomio: ");
+             while(op!=1){
+               System.out.println("Inserte el Coeficiente");
+               C = entrada.nextInt();
+               System.out.println("Inserte la variable");
+               X = entrada.next();
+               System.out.println("Inserte el exponente");
+               e = entrada.nextInt();
+               TerminoP termino = new TerminoP(C,X,e);
+               listaD2.insertaFinal(termino);
+               System.out.println("Desea ingresar otro Termino?");
+               System.out.println("Op =1");
+               op = entrada.nextInt();
+          }
            listaD.imprimir();
+           listaD2.imprimir();
+           listaD.multiplicaPolinomio(listaD, listaD2);
     }
     
 }
