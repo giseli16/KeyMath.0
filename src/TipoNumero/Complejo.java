@@ -40,9 +40,9 @@ public class Complejo extends Real
     @Override
     public String toString() {
         if(this.getImaginario() < 0)
-            return super.toString() + getImaginario() + "i";
+            return super.toString() + (int)getImaginario() + "i";
         else
-            return super.toString() + "+" + getImaginario() + "i";
+            return super.toString() + "+" + (int)getImaginario() + "i";
     }
     
     

@@ -31,6 +31,6 @@ public class Real{
 
     @Override
     public String toString() {
-        return "" + getReal();
+        return "" + (int)getReal();
     }
 }
