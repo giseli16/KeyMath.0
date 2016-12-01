@@ -71,16 +71,16 @@ public class Menu extends javax.swing.JFrame {
         jButtonLimpiar = new javax.swing.JButton();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
-        jTextCoefReal = new javax.swing.JTextField();
+        txtCoefReal = new javax.swing.JTextField();
         jButtonAñadirComplejo = new javax.swing.JButton();
         jButtonLimpiarComplejo = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        jButtonMasComplejo = new javax.swing.JButton();
-        jButtonMenosComplejo = new javax.swing.JButton();
-        jButtonMultComplejo = new javax.swing.JButton();
-        jButtonDivComplejo = new javax.swing.JButton();
+        btnMasComplejo = new javax.swing.JButton();
+        btnMenosComplejo = new javax.swing.JButton();
+        btnMultComplejo = new javax.swing.JButton();
+        btnDivComplejo = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextCoefComp = new javax.swing.JTextField();
+        txtCoefComplejo = new javax.swing.JTextField();
         Signo = new javax.swing.JComboBox<>();
         jTextResultado2 = new javax.swing.JTextField();
 
@@ -175,7 +175,7 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonMultReal)
                             .addComponent(jButtonDivReal))))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,7 +191,7 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonMenosReal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButtonDivReal))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAReal)
                     .addComponent(jButtonLimpiarReal))
@@ -369,22 +369,22 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Generar Polinomio", jPanel2);
 
         jTabbedPane1.addTab("Polinomios", jTabbedPane2);
 
-        jTextCoefReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextCoefReal.addActionListener(new java.awt.event.ActionListener() {
+        txtCoefReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txtCoefReal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextCoefRealActionPerformed(evt);
+                txtCoefRealActionPerformed(evt);
             }
         });
-        jTextCoefReal.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtCoefReal.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextCoefRealKeyTyped(evt);
+                txtCoefRealKeyTyped(evt);
             }
         });
 
@@ -402,35 +402,35 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButtonMasComplejo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButtonMasComplejo.setText("+");
-        jButtonMasComplejo.addActionListener(new java.awt.event.ActionListener() {
+        btnMasComplejo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnMasComplejo.setText("+");
+        btnMasComplejo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMasComplejoActionPerformed(evt);
+                btnMasComplejoActionPerformed(evt);
             }
         });
 
-        jButtonMenosComplejo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButtonMenosComplejo.setText("-");
-        jButtonMenosComplejo.addActionListener(new java.awt.event.ActionListener() {
+        btnMenosComplejo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnMenosComplejo.setText("-");
+        btnMenosComplejo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMenosComplejoActionPerformed(evt);
+                btnMenosComplejoActionPerformed(evt);
             }
         });
 
-        jButtonMultComplejo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButtonMultComplejo.setText("*");
-        jButtonMultComplejo.addActionListener(new java.awt.event.ActionListener() {
+        btnMultComplejo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnMultComplejo.setText("*");
+        btnMultComplejo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMultComplejoActionPerformed(evt);
+                btnMultComplejoActionPerformed(evt);
             }
         });
 
-        jButtonDivComplejo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButtonDivComplejo.setText("/");
-        jButtonDivComplejo.addActionListener(new java.awt.event.ActionListener() {
+        btnDivComplejo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnDivComplejo.setText("/");
+        btnDivComplejo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDivComplejoActionPerformed(evt);
+                btnDivComplejoActionPerformed(evt);
             }
         });
 
@@ -442,14 +442,13 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButtonMasComplejo)
+                        .addComponent(btnMasComplejo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonMenosComplejo))
+                        .addComponent(btnMenosComplejo))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jButtonMultComplejo)
+                        .addComponent(btnMultComplejo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonDivComplejo)))
+                        .addComponent(btnDivComplejo)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -457,22 +456,20 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonMasComplejo)
-                    .addComponent(jButtonMenosComplejo))
+                    .addComponent(btnMasComplejo)
+                    .addComponent(btnMenosComplejo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonDivComplejo)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButtonMultComplejo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())))
+                    .addComponent(btnDivComplejo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMultComplejo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jLabel3.setFont(new java.awt.Font("Georgia", 3, 48)); // NOI18N
         jLabel3.setText("i");
 
-        jTextCoefComp.addActionListener(new java.awt.event.ActionListener() {
+        txtCoefComplejo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextCoefCompActionPerformed(evt);
+                txtCoefComplejoActionPerformed(evt);
             }
         });
 
@@ -493,7 +490,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonAñadirComplejo)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jTextCoefReal, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCoefReal, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Signo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -502,7 +499,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jButtonLimpiarComplejo))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextCoefComp, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCoefComplejo, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(14, 14, 14)))
@@ -517,9 +514,9 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextCoefReal, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCoefReal, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextCoefComp, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCoefComplejo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Signo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(36, 36, 36))
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -527,7 +524,7 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAñadirComplejo)
                     .addComponent(jButtonLimpiarComplejo))
@@ -550,20 +547,20 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(256, 256, 256)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(jTextResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(271, Short.MAX_VALUE))
+                        .addComponent(jTextResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(jTextResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(71, Short.MAX_VALUE))
         );
@@ -705,33 +702,33 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextRealKeyTyped
 
-    private void jButtonMasComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMasComplejoActionPerformed
+    private void btnMasComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasComplejoActionPerformed
         // TODO add your handling code here:
         resultado= jTextResultado2.getText()+ "+";
 
         jTextResultado2.setText(resultado);
-    }//GEN-LAST:event_jButtonMasComplejoActionPerformed
+    }//GEN-LAST:event_btnMasComplejoActionPerformed
 
-    private void jButtonMenosComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenosComplejoActionPerformed
+    private void btnMenosComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosComplejoActionPerformed
         // TODO add your handling code here:
         resultado= jTextResultado2.getText()+ "-";
 
         jTextResultado2.setText(resultado);
-    }//GEN-LAST:event_jButtonMenosComplejoActionPerformed
+    }//GEN-LAST:event_btnMenosComplejoActionPerformed
 
-    private void jButtonMultComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultComplejoActionPerformed
+    private void btnMultComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultComplejoActionPerformed
         // TODO add your handling code here:
         resultado= jTextResultado2.getText()+ "*";
 
         jTextResultado2.setText(resultado);
-    }//GEN-LAST:event_jButtonMultComplejoActionPerformed
+    }//GEN-LAST:event_btnMultComplejoActionPerformed
 
-    private void jButtonDivComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivComplejoActionPerformed
+    private void btnDivComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivComplejoActionPerformed
         // TODO add your handling code here:
         resultado= jTextResultado2.getText()+ "/";
 
         jTextResultado2.setText(resultado);
-    }//GEN-LAST:event_jButtonDivComplejoActionPerformed
+    }//GEN-LAST:event_btnDivComplejoActionPerformed
 
     private void jButtonLimpiarComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarComplejoActionPerformed
         // TODO add your handling code here:
@@ -745,11 +742,11 @@ public class Menu extends javax.swing.JFrame {
         
         //ExpCom = Integer.parseInt(jTextExpComplejo.getText());
         
-        jTextResultado2.setText(jTextCoefReal.getText() + Signo.getSelectedItem() + jTextCoefComp.getText()+ "i");
+        jTextResultado2.setText(txtCoefReal.getText() + Signo.getSelectedItem() + txtCoefComplejo.getText()+ "i");
        
-        real= Double.parseDouble(jTextCoefReal.getText());
+        real= Double.parseDouble(txtCoefReal.getText());
         
-        complejo = Double.parseDouble(jTextCoefComp.getText());
+        complejo = Double.parseDouble(txtCoefComplejo.getText());
        
         
         complejo1= new Complejo(real, complejo);
@@ -772,22 +769,22 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextExpKeyTyped
 
-    private void jTextCoefRealKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCoefRealKeyTyped
+    private void txtCoefRealKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCoefRealKeyTyped
         // TODO add your handling code here:
         char a = evt.getKeyChar();
         if(a < '0' || a >   '9'){
             evt.consume();
         }
-    }//GEN-LAST:event_jTextCoefRealKeyTyped
+    }//GEN-LAST:event_txtCoefRealKeyTyped
 
-    private void jTextCoefRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCoefRealActionPerformed
+    private void txtCoefRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCoefRealActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextCoefRealActionPerformed
+    }//GEN-LAST:event_txtCoefRealActionPerformed
 
-    private void jTextCoefCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCoefCompActionPerformed
+    private void txtCoefComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCoefComplejoActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jTextCoefCompActionPerformed
+    }//GEN-LAST:event_txtCoefComplejoActionPerformed
 
     private void SignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignoActionPerformed
         // TODO add your handling code here:
@@ -830,22 +827,22 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Signo;
+    private javax.swing.JButton btnDivComplejo;
+    private javax.swing.JButton btnMasComplejo;
+    private javax.swing.JButton btnMenosComplejo;
+    private javax.swing.JButton btnMultComplejo;
     private javax.swing.JButton jButtonAPoli;
     private javax.swing.JButton jButtonAReal;
     private javax.swing.JButton jButtonATermino;
     private javax.swing.JButton jButtonAñadirComplejo;
-    private javax.swing.JButton jButtonDivComplejo;
     private javax.swing.JButton jButtonDivReal;
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JButton jButtonLimpiarComplejo;
     private javax.swing.JButton jButtonLimpiarReal;
     private javax.swing.JButton jButtonMas;
-    private javax.swing.JButton jButtonMasComplejo;
     private javax.swing.JButton jButtonMasReal;
     private javax.swing.JButton jButtonMenos;
-    private javax.swing.JButton jButtonMenosComplejo;
     private javax.swing.JButton jButtonMenosReal;
-    private javax.swing.JButton jButtonMultComplejo;
     private javax.swing.JButton jButtonMultReal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -862,12 +859,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTextField jTextCoef;
-    private javax.swing.JTextField jTextCoefComp;
-    private javax.swing.JTextField jTextCoefReal;
     private javax.swing.JTextField jTextExp;
     private javax.swing.JTextField jTextReal;
     private javax.swing.JTextField jTextResultado;
     private javax.swing.JTextField jTextResultado2;
     private javax.swing.JTextField jTextVar;
+    private javax.swing.JTextField txtCoefComplejo;
+    private javax.swing.JTextField txtCoefReal;
     // End of variables declaration//GEN-END:variables
 }
