@@ -5,8 +5,9 @@
  */
 package Teclado;
 //import Complejos.TerminoC;
+import Aritmetica.*;
 import Polinomios.*;
-import TipoNumero.Complejo;
+import TipoNumero.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
@@ -21,6 +22,14 @@ public class Menu extends javax.swing.JFrame {
     String resultado;
     private Object vt;
     
+    
+    // RICARDO
+    ArrayList<Complejo> listaComplejos;
+    ArrayList<String> listOperaciones; // solamente guarda el caracter de la operacion.... + - * /...
+    
+    
+    //******** END RICARDO
+    
     /*Complejo Comp1 = new Complejo();
     TerminoC term2 = new TerminoC();
     private Object cmp;*/
@@ -32,6 +41,8 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         setLocationRelativeTo(null);
+        listaComplejos = new ArrayList<Complejo>();
+        listOperaciones = new ArrayList<String>();
     }
 
     /**
@@ -80,7 +91,7 @@ public class Menu extends javax.swing.JFrame {
         btnMultComplejo = new javax.swing.JButton();
         btnDivComplejo = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        txtCoefComplejo = new javax.swing.JTextField();
+        txtCoefImaginario = new javax.swing.JTextField();
         Signo = new javax.swing.JComboBox<>();
         jTextResultado2 = new javax.swing.JTextField();
 
@@ -376,7 +387,7 @@ public class Menu extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Polinomios", jTabbedPane2);
 
-        txtCoefReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txtCoefReal.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
         txtCoefReal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCoefRealActionPerformed(evt);
@@ -467,9 +478,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Georgia", 3, 48)); // NOI18N
         jLabel3.setText("i");
 
-        txtCoefComplejo.addActionListener(new java.awt.event.ActionListener() {
+        txtCoefImaginario.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        txtCoefImaginario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCoefComplejoActionPerformed(evt);
+                txtCoefImaginarioActionPerformed(evt);
             }
         });
 
@@ -499,7 +511,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jButtonLimpiarComplejo))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCoefComplejo, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCoefImaginario, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(14, 14, 14)))
@@ -516,7 +528,7 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtCoefReal, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtCoefComplejo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCoefImaginario, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Signo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(36, 36, 36))
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -547,12 +559,11 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(256, 256, 256)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jTextResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -562,7 +573,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(jTextResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
@@ -704,9 +715,14 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnMasComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasComplejoActionPerformed
         // TODO add your handling code here:
-        resultado= jTextResultado2.getText()+ "+";
-
-        jTextResultado2.setText(resultado);
+        // RICARDO
+        
+        
+        listOperaciones.add(" + ");
+        
+        String verText = recorrerListaComplejos();
+        
+        jTextResultado2.setText(verText);
     }//GEN-LAST:event_btnMasComplejoActionPerformed
 
     private void btnMenosComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosComplejoActionPerformed
@@ -737,21 +753,18 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButtonAñadirComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirComplejoActionPerformed
         // TODO add your handling code here:
-        double real, complejo;
-       // int ExpCom;
-        
-        //ExpCom = Integer.parseInt(jTextExpComplejo.getText());
-        
-        jTextResultado2.setText(txtCoefReal.getText() + Signo.getSelectedItem() + txtCoefComplejo.getText()+ "i");
-       
-        real= Double.parseDouble(txtCoefReal.getText());
-        
-        complejo = Double.parseDouble(txtCoefComplejo.getText());
-       
-        
-        complejo1= new Complejo(real, complejo);
+         
+        // RICARDO   
+        double real= Double.parseDouble(txtCoefReal.getText());
+        double imaginario = Double.parseDouble(txtCoefImaginario.getText());
         
         
+        
+        listaComplejos.add(new Complejo(real, imaginario));
+        
+        String verText = recorrerListaComplejos(); // devuelve concatenacion de todos los elementos ingresados
+        
+        jTextResultado2.setText(verText);
         
 //        jTextCoefReal.setText(null);
 //       // jTextExpComplejo.setText(null);
@@ -781,10 +794,10 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCoefRealActionPerformed
 
-    private void txtCoefComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCoefComplejoActionPerformed
+    private void txtCoefImaginarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCoefImaginarioActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_txtCoefComplejoActionPerformed
+    }//GEN-LAST:event_txtCoefImaginarioActionPerformed
 
     private void SignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignoActionPerformed
         // TODO add your handling code here:
@@ -825,6 +838,21 @@ public class Menu extends javax.swing.JFrame {
         });
     }
 
+    // RICARDO ***********************************************
+    private String recorrerListaComplejos()
+    {
+        String concatComplejos = ""; //cadena unicamente servible para mostrar info en pantalla mientras se va agregando mas complejos
+        
+        for(int i = 0; i < listaComplejos.size(); i++)
+        {
+            concatComplejos += listaComplejos.get(i).toString();
+            if(listOperaciones.size() > i)
+                concatComplejos += listOperaciones.get(i).toString();
+        }
+        return concatComplejos;
+    }
+    //**********************************************************
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Signo;
     private javax.swing.JButton btnDivComplejo;
@@ -864,7 +892,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextResultado;
     private javax.swing.JTextField jTextResultado2;
     private javax.swing.JTextField jTextVar;
-    private javax.swing.JTextField txtCoefComplejo;
+    private javax.swing.JTextField txtCoefImaginario;
     private javax.swing.JTextField txtCoefReal;
     // End of variables declaration//GEN-END:variables
 }
