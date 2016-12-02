@@ -66,14 +66,23 @@ public class Menu extends javax.swing.JFrame {
         btnResultadoReal = new javax.swing.JButton();
         jTextNumeros = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        SignoReal = new javax.swing.JComboBox<String>();
+        SignoReal = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jTextResSuma = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextResResta = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTextResMult = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTextResDiv = new javax.swing.JTextField();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jTextCoef = new javax.swing.JTextField();
         jTextVar = new javax.swing.JTextField();
         jTextExp = new javax.swing.JTextField();
-        SignoPolinomios = new javax.swing.JComboBox<String>();
+        SignoPolinomios = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jButtonATermino = new javax.swing.JButton();
         jButtonLimpiar = new javax.swing.JButton();
@@ -98,13 +107,13 @@ public class Menu extends javax.swing.JFrame {
         btnResultado = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         txtCoefReal = new javax.swing.JTextField();
-        Signo = new javax.swing.JComboBox<String>();
+        Signo = new javax.swing.JComboBox<>();
         txtCoefImaginario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jButtonAñadirComplejo = new javax.swing.JButton();
         jButtonLimpiarComplejo = new javax.swing.JButton();
-        SignoComplejo = new javax.swing.JComboBox<String>();
+        SignoComplejo = new javax.swing.JComboBox<>();
         jTextResultado2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
@@ -225,58 +234,111 @@ public class Menu extends javax.swing.JFrame {
         jLabel6.setText("Números hasta ahora:");
 
         SignoReal.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        SignoReal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
+        SignoReal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
         SignoReal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignoRealActionPerformed(evt);
             }
         });
 
+        jButton2.setText("Realizar todas las operaciones");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Resultado Suma:");
+
+        jLabel8.setText("Resultado Resta:");
+
+        jLabel9.setText("Resultado Multiplicación:");
+
+        jLabel10.setText("Resultado División");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(SignoReal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(SignoReal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonAReal))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2)
+                                .addGap(43, 43, 43))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jTextResSuma)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jTextResResta)
+                                    .addComponent(jTextResMult)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jTextResDiv, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(106, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButtonAReal)
-                                .addGap(45, 45, 45)
-                                .addComponent(jButtonLimpiarReal))
-                            .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(137, 137, 137))))
+                                .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonLimpiarReal)))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
-                                .addComponent(SignoReal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonAReal)
-                            .addComponent(jButtonLimpiarReal)))
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                                .addComponent(SignoReal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonAReal))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextResSuma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextResResta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextResMult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextResDiv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonLimpiarReal))
                 .addGap(37, 37, 37))
         );
 
@@ -320,7 +382,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         SignoPolinomios.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        SignoPolinomios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
+        SignoPolinomios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
         SignoPolinomios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignoPolinomiosActionPerformed(evt);
@@ -640,7 +702,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         Signo.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        Signo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
+        Signo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
         Signo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignoActionPerformed(evt);
@@ -728,7 +790,7 @@ public class Menu extends javax.swing.JFrame {
         );
 
         SignoComplejo.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        SignoComplejo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
+        SignoComplejo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
         SignoComplejo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignoComplejoActionPerformed(evt);
@@ -1204,6 +1266,10 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SignoComplejoActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1258,9 +1324,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Signo;
     private javax.swing.JComboBox<String> SignoComplejo;
     private javax.swing.JComboBox<String> SignoPolinomios;
-    private javax.swing.JComboBox<String> SignoPolinomios1;
-    private javax.swing.JComboBox<String> SignoPolinomios2;
-    private javax.swing.JComboBox<String> SignoPolinomios3;
     private javax.swing.JComboBox<String> SignoReal;
     private javax.swing.JButton btnDivComplejo;
     private javax.swing.JButton btnMasComplejo;
@@ -1270,6 +1333,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnResultadoReal;
     private javax.swing.JButton jBtnAgregarPolinomio;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonAReal;
     private javax.swing.JButton jButtonATermino;
     private javax.swing.JButton jButtonAñadirComplejo;
@@ -1283,11 +1347,15 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButtonMenosReal;
     private javax.swing.JButton jButtonMultReal;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1311,6 +1379,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextNumeros;
     private javax.swing.JTextField jTextPolinomioActual;
     private javax.swing.JTextField jTextReal;
+    private javax.swing.JTextField jTextResDiv;
+    private javax.swing.JTextField jTextResMult;
+    private javax.swing.JTextField jTextResResta;
+    private javax.swing.JTextField jTextResSuma;
     private javax.swing.JTextField jTextResultado;
     private javax.swing.JTextField jTextResultado2;
     private javax.swing.JTextField jTextVar;
