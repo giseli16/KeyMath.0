@@ -180,24 +180,24 @@ public class Menu extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonMasReal, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonMenosReal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addComponent(jButtonMenosReal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonMasReal))
+                .addGap(26, 26, 26)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonDivReal)
-                    .addComponent(jButtonMultReal))
+                    .addComponent(jButtonDivReal, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonMultReal, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 74, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonMasReal)
-                    .addComponent(jButtonMultReal))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonMultReal)
+                    .addComponent(jButtonMasReal, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonMenosReal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonMenosReal)
                     .addComponent(jButtonDivReal))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -212,17 +212,16 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(91, 91, 91)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButtonAReal)
-                                .addGap(20, 20, 20)))
-                        .addGap(35, 35, 35)
-                        .addComponent(jButtonLimpiarReal)
+                                .addGap(55, 55, 55)
+                                .addComponent(jButtonLimpiarReal))
+                            .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(182, 182, 182)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(330, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -237,10 +236,10 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jButtonAReal)
                             .addComponent(jButtonLimpiarReal)))
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
 
@@ -776,6 +775,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
         // TODO add your handling code here:
+        
         jTextResultado2.setText(null);
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
@@ -861,7 +861,7 @@ public class Menu extends javax.swing.JFrame {
         
         listOperaciones.add(" + ");
         
-        String verText = recorrerListaComplejos();
+        String verText = recorrerListas(listaComplejos, listOperaciones);
         
         jTextResultado2.setText(verText);
     }//GEN-LAST:event_btnMasComplejoActionPerformed
@@ -870,7 +870,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         listOperaciones.add(" - ");
         
-        String verText = recorrerListaComplejos();
+        String verText = recorrerListas(listaComplejos, listOperaciones);
 
         jTextResultado2.setText(verText);
     }//GEN-LAST:event_btnMenosComplejoActionPerformed
@@ -879,7 +879,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         listOperaciones.add(" * ");
         
-        String verText = recorrerListaComplejos();
+        String verText = recorrerListas(listaComplejos, listOperaciones);
 
         jTextResultado2.setText(verText);
     }//GEN-LAST:event_btnMultComplejoActionPerformed
@@ -888,7 +888,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         listOperaciones.add(" / ");
         
-        String verText = recorrerListaComplejos();
+        String verText = recorrerListas(listaComplejos, listOperaciones);
 
         jTextResultado2.setText(verText);
     }//GEN-LAST:event_btnDivComplejoActionPerformed
@@ -913,7 +913,7 @@ public class Menu extends javax.swing.JFrame {
         
             listaComplejos.add(new Complejo(real, imaginario));
         
-            String verText = recorrerListaComplejos(); // devuelve concatenacion de todos los elementos ingresados
+            String verText = recorrerListas(listaComplejos, listOperaciones); // devuelve concatenacion de todos los elementos ingresados
         
             jTextResultado2.setText(verText);
         }catch(Exception e){
@@ -1047,15 +1047,15 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // RICARDO ***********************************************
-    private String recorrerListaComplejos()
+    private String recorrerListas(ArrayList numeros, ArrayList operaciones)
     {
-        String concatComplejos = ""; //cadena unicamente servible para mostrar info en pantalla mientras se va agregando mas complejos
+        String concatComplejos = ""; //cadena unicamente servible para mostrar info en pantalla mientras se va agregando mas numeros
         
-        for(int i = 0; i < listaComplejos.size(); i++)
+        for(int i = 0; i < numeros.size(); i++)
         {
-            concatComplejos += listaComplejos.get(i).toString();
-            if(listOperaciones.size() > i)
-                concatComplejos += listOperaciones.get(i).toString();
+            concatComplejos += numeros.get(i).toString();
+            if(operaciones.size() > i)
+                concatComplejos += operaciones.get(i).toString();
         }
         return concatComplejos;
     }
