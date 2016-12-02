@@ -6,6 +6,7 @@
 package Teclado;
 //import Complejos.TerminoC;
 import Aritmetica.*;
+import Concurrencia.RealesConcurrente;
 import Polinomios.*;
 import TipoNumero.*;
 import java.awt.event.KeyEvent;
@@ -1268,6 +1269,21 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        RealesConcurrente suma = new RealesConcurrente("+", listaReales, this.jTextResSuma);
+        RealesConcurrente resta = new RealesConcurrente("-", listaReales, this.jTextResResta);
+        RealesConcurrente multi = new RealesConcurrente("*", listaReales, this.jTextResMult);
+        RealesConcurrente division = new RealesConcurrente("/", listaReales, this.jTextResDiv);
+        
+        Thread hilo1 = new Thread(suma);
+        Thread hilo2 = new Thread(resta);
+        Thread hilo3 = new Thread(multi);
+        Thread hilo4 = new Thread(division);
+        
+        hilo1.start();
+        hilo2.start();
+        hilo3.start();
+        hilo4.start();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
