@@ -79,17 +79,22 @@ return cont;
     public void multiplicaBinomio(DequeListaDoble deque, DequeListaDoble deque2){
         DequeListaDoble dequeAux = new DequeListaDoble();
         DequeListaDoble deque3 = new DequeListaDoble();
+        
         int a,b,c,d,e,h,veces=deque.size();
         String f,g;
+        
         TerminoP termino1 = new TerminoP();
         TerminoP termino2 = new TerminoP();
         TerminoP terminoAux = new TerminoP();
+        
         while(!deque2.isEmpty()){
             System.out.println("holo");
+            
             termino1 = (TerminoP)deque.fist();
             a=(int) termino1.getCoeficiente();
             b=(int) termino1.getExponente();
-            f=termino1.getVariable();            
+            f=termino1.getVariable(); 
+            
             for (int i = 0; i < veces; i++) {
                     if(f.equals(((TerminoP)deque2.fist()).getVariable())){
                         c=a*(int)((TerminoP)deque2.fist()).getCoeficiente();
