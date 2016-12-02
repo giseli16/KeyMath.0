@@ -1118,7 +1118,43 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnResultadoRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoRealActionPerformed
         // TODO add your handling code here:
+        Real actual = new Real(0);
+        Real siguiente = new Real(0);
         
+        OperacionesBasicas opera = new OperacionesBasicas();
+        
+        for(int i = 0; i < listaReales.size(); i++)
+        {
+            if(i == 0)
+                actual = listaReales.get(i);
+            
+            if(listaReales.size() - 1 > i)
+            {
+                siguiente = listaReales.get(i + 1);
+            }
+            
+            if(listOperaciones.size() > i)
+            {    
+                if(listOperaciones.get(i).equals(" + "))
+                {
+                    actual = opera.suma(actual, siguiente);
+                }
+                if(listOperaciones.get(i).equals(" - "))
+                {
+                    actual = opera.resta(actual, siguiente);
+                }
+                if(listOperaciones.get(i).equals(" * "))
+                {
+                    actual = opera.multiplicacion(actual, siguiente);
+                }
+                if(listOperaciones.get(i).equals(" / "))
+                {
+                    actual = opera.division(actual, siguiente);
+                }
+            }
+        }
+        
+        this.jTextResultado2.setText(actual.toString());
     }//GEN-LAST:event_btnResultadoRealActionPerformed
 
     /**
