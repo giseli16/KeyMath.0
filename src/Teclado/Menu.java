@@ -721,7 +721,7 @@ public class Menu extends javax.swing.JFrame {
         term1.setVariable(var);
         term1.setExponente(exp);
         TerminoActual.insertFirst(term1);
-        polinomioAcumulado.insertFirst(term1);
+        polinomioAcumulado.insertFirst(term1); //Se le va a agregando términos al polinomio
         //Limpiando los cuadros
         jTextCoef.setText(null);
         jTextVar.setText(null);
@@ -731,7 +731,8 @@ public class Menu extends javax.swing.JFrame {
         while(!TerminoActual.isEmpty()){
             poli.add(TerminoActual.removeFirst());
         }
-        String termino= poli.toString().substring(1, poli.toString().length()-1);
+        String termino= poli.toString().substring(1, poli.toString().length()-1); //quitando los corchetes del ArrayList
+        
         
         resultado= jTextPolinomioActual.getText()+termino;
         jTextPolinomioActual.setText(resultado);
