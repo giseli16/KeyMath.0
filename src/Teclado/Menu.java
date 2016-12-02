@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author giselle
  */
 public class Menu extends javax.swing.JFrame {
-    Polinomio poli1 = new Polinomio();
+    DequeListaDoble polinomioActual= new DequeListaDoble();
     TerminoP term1= new TerminoP();
     Complejo complejo1;
     String resultado;
@@ -61,12 +61,15 @@ public class Menu extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jTextReal = new javax.swing.JTextField();
-        jButtonMasReal = new javax.swing.JButton();
-        jButtonMenosReal = new javax.swing.JButton();
-        jButtonMultReal = new javax.swing.JButton();
-        jButtonDivReal = new javax.swing.JButton();
         jButtonAReal = new javax.swing.JButton();
         jButtonLimpiarReal = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jButtonMasReal = new javax.swing.JButton();
+        jButtonMultReal = new javax.swing.JButton();
+        jButtonMenosReal = new javax.swing.JButton();
+        jButtonDivReal = new javax.swing.JButton();
+        jTextNumeros = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -121,38 +124,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButtonMasReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButtonMasReal.setText("+");
-        jButtonMasReal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMasRealActionPerformed(evt);
-            }
-        });
-
-        jButtonMenosReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButtonMenosReal.setText("-");
-        jButtonMenosReal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMenosRealActionPerformed(evt);
-            }
-        });
-
-        jButtonMultReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButtonMultReal.setText("*");
-        jButtonMultReal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMultRealActionPerformed(evt);
-            }
-        });
-
-        jButtonDivReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButtonDivReal.setText("/");
-        jButtonDivReal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDivRealActionPerformed(evt);
-            }
-        });
-
         jButtonAReal.setText("Añadir Real");
         jButtonAReal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,52 +138,106 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jButtonMasReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButtonMasReal.setText("+");
+        jButtonMasReal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMasRealActionPerformed(evt);
+            }
+        });
+
+        jButtonMultReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButtonMultReal.setText("*");
+        jButtonMultReal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMultRealActionPerformed(evt);
+            }
+        });
+
+        jButtonMenosReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButtonMenosReal.setText("-");
+        jButtonMenosReal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMenosRealActionPerformed(evt);
+            }
+        });
+
+        jButtonDivReal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButtonDivReal.setText("/");
+        jButtonDivReal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDivRealActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonMasReal, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonMenosReal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonDivReal)
+                    .addComponent(jButtonMultReal))
+                .addGap(0, 74, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonMasReal)
+                    .addComponent(jButtonMultReal))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonMenosReal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonDivReal))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        jLabel6.setText("Números hasta ahora:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jButtonAReal)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jButtonLimpiarReal))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonMasReal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonMenosReal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(55, 55, 55)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonMultReal)
-                            .addComponent(jButtonDivReal))))
-                .addContainerGap(377, Short.MAX_VALUE))
+                            .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButtonAReal)
+                                .addGap(20, 20, 20)))
+                        .addGap(35, 35, 35)
+                        .addComponent(jButtonLimpiarReal)
+                        .addGap(182, 182, 182)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonMasReal)
-                            .addComponent(jButtonMultReal))
-                        .addGap(18, 18, 18)
+                        .addComponent(jTextReal, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonMenosReal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDivReal))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonAReal)
-                    .addComponent(jButtonLimpiarReal))
-                .addGap(34, 34, 34))
+                            .addComponent(jButtonAReal)
+                            .addComponent(jButtonLimpiarReal)))
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         jTabbedPane3.addTab("General Reales", jPanel1);
@@ -693,22 +718,20 @@ public class Menu extends javax.swing.JFrame {
         term1.setCoeficiente(coef);
         term1.setVariable(var);
         term1.setExponente(exp);
-        poli1.insertaFinal(term1);
+        polinomioActual.insertFirst(term1);
         //Limpiando los cuadros
         jTextCoef.setText(null);
         jTextVar.setText(null);
         jTextExp.setText(null);
         
         
-        while(!poli1.vacio()){
-            poli.add(poli1.eliminaInicio());
+        while(!polinomioActual.isEmpty()){
+            poli.add(polinomioActual.removeFirst());
         }
         String termino= poli.toString().substring(1, poli.toString().length()-1);
         
         resultado= jTextResultado2.getText()+termino;
         jTextPolinomioActual.setText(resultado);
-        poli1.imprimir();
-        //j
     }//GEN-LAST:event_jButtonATerminoActionPerformed
 
     private void jButtonAPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAPoliActionPerformed
@@ -750,7 +773,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButtonARealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonARealActionPerformed
         // TODO add your handling code here:
-        int real;
+        double real;
         
         real = Integer.parseInt(jTextReal.getText());
         
@@ -966,7 +989,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -981,6 +1006,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTextField jTextCoef;
     private javax.swing.JTextField jTextExp;
+    private javax.swing.JTextField jTextNumeros;
     private javax.swing.JTextField jTextPolinomioActual;
     private javax.swing.JTextField jTextReal;
     private javax.swing.JTextField jTextResultado;
