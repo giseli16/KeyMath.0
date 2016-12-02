@@ -10,6 +10,7 @@ import Polinomios.*;
 import TipoNumero.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -78,7 +79,7 @@ public class Menu extends javax.swing.JFrame {
         jTextCoef = new javax.swing.JTextField();
         jTextVar = new javax.swing.JTextField();
         jTextExp = new javax.swing.JTextField();
-        SignoPolinomios = new javax.swing.JComboBox<String>();
+        SignoPolinomios = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jButtonMas = new javax.swing.JButton();
         jButtonMenos = new javax.swing.JButton();
@@ -97,12 +98,13 @@ public class Menu extends javax.swing.JFrame {
         btnDivComplejo = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         txtCoefReal = new javax.swing.JTextField();
-        Signo = new javax.swing.JComboBox<String>();
+        Signo = new javax.swing.JComboBox<>();
         txtCoefImaginario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jButtonAñadirComplejo = new javax.swing.JButton();
         jButtonLimpiarComplejo = new javax.swing.JButton();
+        btnResultado = new javax.swing.JButton();
         jTextResultado2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
@@ -221,7 +223,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jButtonLimpiarReal)
                         .addGap(182, 182, 182)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(330, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +284,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         SignoPolinomios.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        SignoPolinomios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
+        SignoPolinomios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
         SignoPolinomios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignoPolinomiosActionPerformed(evt);
@@ -348,7 +350,7 @@ public class Menu extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jButtonMas, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addComponent(jButtonMas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
@@ -424,7 +426,7 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(jTextPolinomioActual, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(201, 461, Short.MAX_VALUE))
+                .addGap(201, 543, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -527,7 +529,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         Signo.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        Signo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
+        Signo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
         Signo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignoActionPerformed(evt);
@@ -614,6 +616,13 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(0, 15, Short.MAX_VALUE))
         );
 
+        btnResultado.setText("Resultado");
+        btnResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResultadoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -621,12 +630,13 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(479, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -639,8 +649,10 @@ public class Menu extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnResultado))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Generar Complejo", jPanel6);
@@ -649,6 +661,7 @@ public class Menu extends javax.swing.JFrame {
 
         jTextResultado2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setText("RESULTADO:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -662,14 +675,14 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(146, 146, 146))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextResultado2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -677,9 +690,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jTextResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
@@ -855,27 +868,35 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnMenosComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosComplejoActionPerformed
         // TODO add your handling code here:
-        resultado= jTextResultado2.getText()+ "-";
+        listOperaciones.add(" - ");
+        
+        String verText = recorrerListaComplejos();
 
-        jTextResultado2.setText(resultado);
+        jTextResultado2.setText(verText);
     }//GEN-LAST:event_btnMenosComplejoActionPerformed
 
     private void btnMultComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultComplejoActionPerformed
         // TODO add your handling code here:
-        resultado= jTextResultado2.getText()+ "*";
+        listOperaciones.add(" * ");
+        
+        String verText = recorrerListaComplejos();
 
-        jTextResultado2.setText(resultado);
+        jTextResultado2.setText(verText);
     }//GEN-LAST:event_btnMultComplejoActionPerformed
 
     private void btnDivComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivComplejoActionPerformed
         // TODO add your handling code here:
-        resultado= jTextResultado2.getText()+ "/";
+        listOperaciones.add(" / ");
+        
+        String verText = recorrerListaComplejos();
 
-        jTextResultado2.setText(resultado);
+        jTextResultado2.setText(verText);
     }//GEN-LAST:event_btnDivComplejoActionPerformed
 
     private void jButtonLimpiarComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarComplejoActionPerformed
         // TODO add your handling code here:
+        listOperaciones.clear();
+        listaComplejos.clear();
         jTextResultado2.setText(null);
     }//GEN-LAST:event_jButtonLimpiarComplejoActionPerformed
 
@@ -883,18 +904,22 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
          
         // RICARDO   
+        try{
+            String signo = String.valueOf(Signo.getSelectedItem());
+            double real= Double.parseDouble(txtCoefReal.getText());
+            double imaginario = Double.parseDouble(signo+txtCoefImaginario.getText());
         
-        String signo = String.valueOf(Signo.getSelectedItem());
-        double real= Double.parseDouble(txtCoefReal.getText());
-        double imaginario = Double.parseDouble(signo+txtCoefImaginario.getText());
         
         
+            listaComplejos.add(new Complejo(real, imaginario));
         
-        listaComplejos.add(new Complejo(real, imaginario));
+            String verText = recorrerListaComplejos(); // devuelve concatenacion de todos los elementos ingresados
         
-        String verText = recorrerListaComplejos(); // devuelve concatenacion de todos los elementos ingresados
+            jTextResultado2.setText(verText);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
         
-        jTextResultado2.setText(verText);
         
 //        jTextCoefReal.setText(null);
 //       // jTextExpComplejo.setText(null);
@@ -944,6 +969,47 @@ public class Menu extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtCoefImaginarioKeyTyped
+
+    private void btnResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoActionPerformed
+        // TODO add your handling code here:
+        Complejo actual = new Complejo(0,0);
+        Complejo siguiente = new Complejo(0, 0);
+        
+        OperacionesBasicas opera = new OperacionesBasicas();
+        
+        for(int i = 0; i < listaComplejos.size(); i++)
+        {
+            if(i == 0)
+                actual = listaComplejos.get(i);
+            
+            if(listaComplejos.size() - 1 > i)
+            {
+                siguiente = listaComplejos.get(i + 1);
+            }
+            
+            if(listOperaciones.size() > i)
+            {    
+                if(listOperaciones.get(i).equals(" + "))
+                {
+                    actual = opera.suma(actual, siguiente);
+                }
+                if(listOperaciones.get(i).equals(" - "))
+                {
+                    actual = opera.resta(actual, siguiente);
+                }
+                if(listOperaciones.get(i).equals(" * "))
+                {
+                    actual = opera.multiplicacion(actual, siguiente);
+                }
+                if(listOperaciones.get(i).equals(" / "))
+                {
+                    actual = opera.division(actual, siguiente);
+                }
+            }
+        }
+        
+        this.jTextResultado2.setText(actual.toString());
+    }//GEN-LAST:event_btnResultadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1002,6 +1068,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnMasComplejo;
     private javax.swing.JButton btnMenosComplejo;
     private javax.swing.JButton btnMultComplejo;
+    private javax.swing.JButton btnResultado;
     private javax.swing.JButton jBtnAgregarPolinomio;
     private javax.swing.JButton jButtonAReal;
     private javax.swing.JButton jButtonATermino;
