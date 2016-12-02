@@ -24,22 +24,10 @@ public class Menu extends javax.swing.JFrame {
     TerminoP term1= new TerminoP();
     Complejo complejo1;
     String resultado;
-    private Object vt;
-    
-    
-    // RICARDO
     ArrayList<Complejo> listaComplejos;
     ArrayList<Real> listaReales;
-    
-    
-    ArrayList<String> listOperaciones; // solamente guarda el caracter de la operacion.... + - * /...
-    
-    //******** END RICARDO
-    
-    /*Complejo Comp1 = new Complejo();
-    TerminoC term2 = new TerminoC();
-    private Object cmp;*/
-    
+ 
+    ArrayList<String> listOperaciones; // solamente guarda el caracter de la operacion.... + - * /...  
 
     /**
      * Creates new form Menu
@@ -961,9 +949,6 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnMasComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasComplejoActionPerformed
         // TODO add your handling code here:
-        // RICARDO
-        
-        
         listOperaciones.add(" + ");
         
         String verText = recorrerListas(listaComplejos, listOperaciones);
@@ -1007,8 +992,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButtonAñadirComplejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirComplejoActionPerformed
         // TODO add your handling code here:
-         
-        // RICARDO   
+ 
         try{
             String signo = String.valueOf(Signo.getSelectedItem());
             double real= Double.parseDouble(txtCoefReal.getText());
@@ -1023,15 +1007,7 @@ public class Menu extends javax.swing.JFrame {
             jTextResultado2.setText(verText);
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
-        }
-        
-        
-//        jTextCoefReal.setText(null);
-//       // jTextExpComplejo.setText(null);
-//        
-////       resultado= jTextResultado2.getText()+varCom;
-//       jTextResultado2.setText(resultado);
-        
+        } 
     }//GEN-LAST:event_jButtonAñadirComplejoActionPerformed
 
     private void jTextExpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextExpKeyTyped
@@ -1192,7 +1168,7 @@ public class Menu extends javax.swing.JFrame {
         });
     }
 
-    // RICARDO ***********************************************
+    // *********************************************************
     private String recorrerListas(ArrayList numeros, ArrayList operaciones)
     {
         String concatComplejos = ""; //cadena unicamente servible para mostrar info en pantalla mientras se va agregando mas numeros
