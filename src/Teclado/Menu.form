@@ -130,7 +130,7 @@
                               </Group>
                               <Component id="jTextNumeros" alignment="0" min="-2" pref="556" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="237" max="32767" attributes="0"/>
+                          <EmptySpace pref="229" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -149,7 +149,7 @@
                               </Group>
                               <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="288" max="32767" attributes="0"/>
+                          <EmptySpace pref="282" max="32767" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jTextNumeros" min="-2" pref="42" max="-2" attributes="0"/>
@@ -203,6 +203,11 @@
                               </Group>
                               <EmptySpace min="0" pref="74" max="32767" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnResultadoReal" min="-2" pref="121" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -218,7 +223,9 @@
                                   <Component id="jButtonMenosReal" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonDivReal" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="28" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnResultadoReal" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -266,6 +273,14 @@
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDivRealActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnResultadoReal">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Resultado"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResultadoRealActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -363,7 +378,7 @@
                                   <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="181" max="32767" attributes="0"/>
+                          <EmptySpace pref="185" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -594,10 +609,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jButton1" pref="312" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jButtonMenos" max="32767" attributes="0"/>
-                                      <Component id="jButtonMas" pref="312" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jButtonMenos" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButtonMas" alignment="0" pref="312" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="23" max="32767" attributes="0"/>
                           </Group>
@@ -731,7 +744,7 @@
                               <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                               <Component id="btnResultado" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="353" max="32767" attributes="0"/>
+                          <EmptySpace pref="359" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

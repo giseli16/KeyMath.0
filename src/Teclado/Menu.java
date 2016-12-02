@@ -29,8 +29,10 @@ public class Menu extends javax.swing.JFrame {
     
     // RICARDO
     ArrayList<Complejo> listaComplejos;
-    ArrayList<String> listOperaciones; // solamente guarda el caracter de la operacion.... + - * /...
+    ArrayList<Real> listaReales;
     
+    
+    ArrayList<String> listOperaciones; // solamente guarda el caracter de la operacion.... + - * /...
     
     //******** END RICARDO
     
@@ -47,6 +49,7 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         listaComplejos = new ArrayList<Complejo>();
         listOperaciones = new ArrayList<String>();
+        listaReales = new ArrayList<Real>();
     }
 
     /**
@@ -72,6 +75,7 @@ public class Menu extends javax.swing.JFrame {
         jButtonMultReal = new javax.swing.JButton();
         jButtonMenosReal = new javax.swing.JButton();
         jButtonDivReal = new javax.swing.JButton();
+        btnResultadoReal = new javax.swing.JButton();
         jTextNumeros = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -180,6 +184,13 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        btnResultadoReal.setText("Resultado");
+        btnResultadoReal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResultadoRealActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -193,6 +204,10 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButtonDivReal, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonMultReal, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 74, Short.MAX_VALUE))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnResultadoReal, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +220,9 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonMenosReal)
                     .addComponent(jButtonDivReal))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnResultadoReal)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel6.setText("Números hasta ahora:");
@@ -228,7 +245,7 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(182, 182, 182)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,7 +259,7 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jButtonAReal)
                             .addComponent(jButtonLimpiarReal)))
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -440,9 +457,8 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButtonMenos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonMas, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)))
+                    .addComponent(jButtonMenos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonMas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -517,7 +533,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(217, 217, 217)
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Generar Polinomio", jPanel2);
@@ -722,7 +738,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnResultado))
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(359, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Generar Complejo", jPanel6);
@@ -873,9 +889,11 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButtonMasRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMasRealActionPerformed
         // TODO add your handling code here:
-        resultado= jTextResultado2.getText()+ "+";
+        listOperaciones.add(" + ");
+        
+        String resul = recorrerListas(listaReales, listOperaciones);
 
-        jTextResultado2.setText(resultado);
+        jTextNumeros.setText(resul);
     }//GEN-LAST:event_jButtonMasRealActionPerformed
 
     private void jTextRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextRealActionPerformed
@@ -884,41 +902,52 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButtonARealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonARealActionPerformed
         // TODO add your handling code here:
-        float real;
-        
-        real = Float.parseFloat(jTextReal.getText());
-        
-        jTextReal.setText(null);
-        
-       resultado= jTextResultado2.getText()+real;
-       jTextResultado2.setText(resultado);
+        try{
+            double real = Double.parseDouble(jTextReal.getText());
+            
+            listaReales.add(new Real(real));
+            
+            String cadena = recorrerListas(listaReales, listOperaciones);
+            
+            jTextNumeros.setText(cadena);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
        
     }//GEN-LAST:event_jButtonARealActionPerformed
 
     private void jButtonLimpiarRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarRealActionPerformed
         // TODO add your handling code here:
+        listOperaciones.clear();
+        listaReales.clear();
         jTextResultado2.setText(null);
     }//GEN-LAST:event_jButtonLimpiarRealActionPerformed
 
     private void jButtonMenosRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenosRealActionPerformed
         // TODO add your handling code here:
-        resultado= jTextResultado2.getText()+ "-";
+        listOperaciones.add(" - ");
+        
+        String resul = recorrerListas(listaReales, listOperaciones);
 
-        jTextResultado2.setText(resultado);
+        jTextNumeros.setText(resul);
     }//GEN-LAST:event_jButtonMenosRealActionPerformed
 
     private void jButtonMultRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultRealActionPerformed
         // TODO add your handling code here:
-        resultado= jTextResultado2.getText()+ "*";
+        listOperaciones.add(" * ");
+        
+        String resul = recorrerListas(listaReales, listOperaciones);
 
-        jTextResultado2.setText(resultado);
+        jTextNumeros.setText(resul);
     }//GEN-LAST:event_jButtonMultRealActionPerformed
 
     private void jButtonDivRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivRealActionPerformed
         // TODO add your handling code here:
-                resultado= jTextResultado2.getText()+ "/";
+        listOperaciones.add(" / ");
+        
+        String resul = recorrerListas(listaReales, listOperaciones);
 
-        jTextResultado2.setText(resultado);
+        jTextNumeros.setText(resul);
     }//GEN-LAST:event_jButtonDivRealActionPerformed
 
     private void jTextRealKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextRealKeyTyped
@@ -1087,6 +1116,11 @@ public class Menu extends javax.swing.JFrame {
         this.jTextResultado2.setText(actual.toString());
     }//GEN-LAST:event_btnResultadoActionPerformed
 
+    private void btnResultadoRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoRealActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnResultadoRealActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1145,6 +1179,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnMenosComplejo;
     private javax.swing.JButton btnMultComplejo;
     private javax.swing.JButton btnResultado;
+    private javax.swing.JButton btnResultadoReal;
     private javax.swing.JButton jBtnAgregarPolinomio;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAReal;
