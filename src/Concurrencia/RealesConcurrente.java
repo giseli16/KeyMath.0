@@ -8,19 +8,22 @@ package Concurrencia;
 import Aritmetica.OperacionesBasicas;
 import TipoNumero.Real;
 import java.util.ArrayList;
+import javax.swing.JTextField;
 
 /**
  *
  * @author ricardo
  */
-public class Reales implements Runnable
+public class RealesConcurrente implements Runnable
 {
     private String signo;
     private ArrayList<Real> numeros;
+    private JTextField resultado;
 
-    public Reales(String signo, ArrayList<Real> numeros) {
+    public RealesConcurrente(String signo, ArrayList<Real> numeros, JTextField resultado) {
         this.signo = signo;
         this.numeros = numeros;
+        this.resultado = resultado;
     }
 
     @Override
@@ -41,23 +44,29 @@ public class Reales implements Runnable
                 siguiente = numeros.get(i + 1);
             }
             
-            if(signo.equals("+"))
+            if(numeros.size() - 1 > i)
             {
-                actual = opera.suma(actual, siguiente);
+                if(signo.equals("+"))
+                {
+                    actual = opera.suma(actual, siguiente);
+                }
+                if(signo.equals("-"))
+                {
+                    actual = opera.resta(actual, siguiente);
+                }
+                if(signo.equals("*"))
+                {
+                    actual = opera.multiplicacion(actual, siguiente);
+                }
+                if(signo.equals("/"))
+                {
+                    actual = opera.division(actual, siguiente);
+                }
             }
-            if(signo.equals("-"))
-            {
-                actual = opera.resta(actual, siguiente);
-            }
-            if(signo.equals("*"))
-            {
-                actual = opera.multiplicacion(actual, siguiente);
-            }
-            if(signo.equals("/"))
-            {
-                actual = opera.division(actual, siguiente);
-            }
+            
         }
+        
+        this.resultado.setText(actual.toString());
     }
     
 }
