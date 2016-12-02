@@ -720,8 +720,17 @@ public class Menu extends javax.swing.JFrame {
         term1.setCoeficiente(coef);
         term1.setVariable(var);
         term1.setExponente(exp);
+        
         TerminoActual.insertFirst(term1);
+        boolean flag = true;
+        if(polinomioAcumulado.isEmpty()){
+            flag = true;
+        }
+        else{
+            flag = false;
+        }
         polinomioAcumulado.insertFirst(term1);
+        
         //Limpiando los cuadros
         jTextCoef.setText(null);
         jTextVar.setText(null);
@@ -731,10 +740,14 @@ public class Menu extends javax.swing.JFrame {
         while(!TerminoActual.isEmpty()){
             poli.add(TerminoActual.removeFirst());
         }
+        
         String termino= poli.toString().substring(1, poli.toString().length()-1);
         
-        resultado= jTextPolinomioActual.getText()+termino;
-        jTextPolinomioActual.setText(resultado);
+        if(flag==true)
+         jTextPolinomioActual.setText(jTextPolinomioActual.getText()+termino);
+        else
+        jTextPolinomioActual.setText(jTextPolinomioActual.getText()+"+"+termino);
+
     }//GEN-LAST:event_jButtonATerminoActionPerformed
 
     private void jBtnAgregarPolinomioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAgregarPolinomioActionPerformed
