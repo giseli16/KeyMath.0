@@ -51,6 +51,7 @@ public class ListaDoble extends ListaD {
    
         return eliminado;
     }
+    
 
     @Override
     public Object eliminaFinal() {
@@ -89,6 +90,7 @@ public class ListaDoble extends ListaD {
 //        }
 //        return eliminado;
 //    }
+    
     
     public static void main(String[] args) {
         ListaDoble listaD = new ListaDoble();

@@ -76,6 +76,10 @@ return cont;
            return lista.getUltimo().getDato();
        return null;
     }
+
+
+    
+    
     
     public static void main(String[] args) {
         DequeListaSimple deque = new DequeListaSimple();
