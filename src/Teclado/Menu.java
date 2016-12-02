@@ -78,7 +78,7 @@ public class Menu extends javax.swing.JFrame {
         jTextCoef = new javax.swing.JTextField();
         jTextVar = new javax.swing.JTextField();
         jTextExp = new javax.swing.JTextField();
-        SignoPolinomios = new javax.swing.JComboBox<>();
+        SignoPolinomios = new javax.swing.JComboBox<String>();
         jPanel4 = new javax.swing.JPanel();
         jButtonMas = new javax.swing.JButton();
         jButtonMenos = new javax.swing.JButton();
@@ -97,7 +97,7 @@ public class Menu extends javax.swing.JFrame {
         btnDivComplejo = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         txtCoefReal = new javax.swing.JTextField();
-        Signo = new javax.swing.JComboBox<>();
+        Signo = new javax.swing.JComboBox<String>();
         txtCoefImaginario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -282,7 +282,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         SignoPolinomios.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        SignoPolinomios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
+        SignoPolinomios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
         SignoPolinomios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignoPolinomiosActionPerformed(evt);
@@ -527,7 +527,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         Signo.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        Signo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
+        Signo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
         Signo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignoActionPerformed(evt);
@@ -538,6 +538,11 @@ public class Menu extends javax.swing.JFrame {
         txtCoefImaginario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCoefImaginarioActionPerformed(evt);
+            }
+        });
+        txtCoefImaginario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCoefImaginarioKeyTyped(evt);
             }
         });
 
@@ -790,9 +795,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButtonARealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonARealActionPerformed
         // TODO add your handling code here:
-        double real;
+        float real;
         
-        real = Integer.parseInt(jTextReal.getText());
+        real = Float.parseFloat(jTextReal.getText());
         
         jTextReal.setText(null);
         
@@ -830,8 +835,9 @@ public class Menu extends javax.swing.JFrame {
     private void jTextRealKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextRealKeyTyped
         // TODO add your handling code here:
         char a = evt.getKeyChar();
-        if(a < '0' || a >   '9'){
-            evt.consume();
+        
+        if(((a < '0') || (a > '9')) && (a != '.')){
+            evt.consume(); 
         }
     }//GEN-LAST:event_jTextRealKeyTyped
 
@@ -930,6 +936,14 @@ public class Menu extends javax.swing.JFrame {
     private void SignoPolinomiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignoPolinomiosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SignoPolinomiosActionPerformed
+
+    private void txtCoefImaginarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCoefImaginarioKeyTyped
+        // TODO add your handling code here:
+        char a = evt.getKeyChar();
+        if(a < '0' || a >   '9'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCoefImaginarioKeyTyped
 
     /**
      * @param args the command line arguments
