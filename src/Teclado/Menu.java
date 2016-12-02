@@ -16,7 +16,9 @@ import java.util.ArrayList;
  * @author giselle
  */
 public class Menu extends javax.swing.JFrame {
-    DequeListaDoble polinomioActual= new DequeListaDoble();
+    DequeListaDoble TerminoActual= new DequeListaDoble();
+    DequeListaDoble polinomioAcumulado= new DequeListaDoble();
+    DequeListaDoble ListaPolinomios = new DequeListaDoble();
     TerminoP term1= new TerminoP();
     Complejo complejo1;
     String resultado;
@@ -85,7 +87,7 @@ public class Menu extends javax.swing.JFrame {
         jButtonLimpiar = new javax.swing.JButton();
         jTextPolinomioActual = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButtonAPoli = new javax.swing.JButton();
+        jBtnAgregarPolinomio = new javax.swing.JButton();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -219,7 +221,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jButtonLimpiarReal)
                         .addGap(182, 182, 182)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,7 +348,7 @@ public class Menu extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jButtonMas, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                .addComponent(jButtonMas, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
@@ -358,7 +360,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonMas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonMenos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(3, 54, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jButtonATermino.setText("Añadir término");
@@ -397,10 +399,10 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel5.setText("Polinomio actual:");
 
-        jButtonAPoli.setText("Agregar Polinomio");
-        jButtonAPoli.addActionListener(new java.awt.event.ActionListener() {
+        jBtnAgregarPolinomio.setText("Agregar Polinomio");
+        jBtnAgregarPolinomio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAPoliActionPerformed(evt);
+                jBtnAgregarPolinomioActionPerformed(evt);
             }
         });
 
@@ -411,39 +413,39 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnAgregarPolinomio, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextPolinomioActual, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonAPoli, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                            .addComponent(jLabel5)
+                            .addComponent(jTextPolinomioActual, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(201, 461, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(17, 17, 17)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addGap(1, 1, 1)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextPolinomioActual, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAPoli))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(jTextPolinomioActual, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jBtnAgregarPolinomio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Generar Polinomio", jPanel2);
@@ -708,7 +710,7 @@ public class Menu extends javax.swing.JFrame {
     private void jButtonATerminoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonATerminoActionPerformed
         // TODO add your handling code here:
         int coef, exp;
-        ArrayList poli = new ArrayList();
+        ArrayList poli = new ArrayList();//Almacena los términos que ya se agregaron
         String var;
         String signoP = String.valueOf(SignoPolinomios.getSelectedItem());
         
@@ -718,26 +720,28 @@ public class Menu extends javax.swing.JFrame {
         term1.setCoeficiente(coef);
         term1.setVariable(var);
         term1.setExponente(exp);
-        polinomioActual.insertFirst(term1);
+        TerminoActual.insertFirst(term1);
+        polinomioAcumulado.insertFirst(term1);
         //Limpiando los cuadros
         jTextCoef.setText(null);
         jTextVar.setText(null);
         jTextExp.setText(null);
         
         
-        while(!polinomioActual.isEmpty()){
-            poli.add(polinomioActual.removeFirst());
+        while(!TerminoActual.isEmpty()){
+            poli.add(TerminoActual.removeFirst());
         }
         String termino= poli.toString().substring(1, poli.toString().length()-1);
         
-        resultado= jTextResultado2.getText()+termino;
+        resultado= jTextPolinomioActual.getText()+termino;
         jTextPolinomioActual.setText(resultado);
     }//GEN-LAST:event_jButtonATerminoActionPerformed
 
-    private void jButtonAPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAPoliActionPerformed
+    private void jBtnAgregarPolinomioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAgregarPolinomioActionPerformed
         // TODO add your handling code here:
-//        jTextResultado.setText(poli1.getPolinomioF());
-    }//GEN-LAST:event_jButtonAPoliActionPerformed
+        ListaPolinomios.insertFirst(polinomioAcumulado);
+
+    }//GEN-LAST:event_jBtnAgregarPolinomioActionPerformed
 
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
         // TODO add your handling code here:
@@ -971,7 +975,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnMasComplejo;
     private javax.swing.JButton btnMenosComplejo;
     private javax.swing.JButton btnMultComplejo;
-    private javax.swing.JButton jButtonAPoli;
+    private javax.swing.JButton jBtnAgregarPolinomio;
     private javax.swing.JButton jButtonAReal;
     private javax.swing.JButton jButtonATermino;
     private javax.swing.JButton jButtonAñadirComplejo;
